@@ -1,0 +1,19 @@
+<mat-toolbar color="primary">
+  <a class="title" href="/">{{ title }}</a>
+  <div class="toolbar-spacer"></div>
+  <a mat-button [routerLink]="['guarded']">Componente Protegido</a>
+  <button mat-raised-button *ngIf="!loginDisplay" (click)="login()">Iniciar sesión</button>
+  <button mat-raised-button color="accent" *ngIf="loginDisplay" (click)="logout()">Cerrar sesión</button>
+</mat-toolbar>
+<div class="container">
+  <!--Esto es para evitar la recarga durante acquireTokenSilent() debido al iframe oculto -->
+  <router-outlet *ngIf="!isIframe"></router-outlet>
+</div>
+<footer *ngIf="loginDisplay">
+  <mat-toolbar>
+    <div class="footer-text"> ¿Cómo lo hicimos? <a
+        href="https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR_ivMYEeUKlEq8CxnMPgdNZUNDlUTTk2NVNYQkZSSjdaTk5KT1o4V1VVNS4u"
+        target="_blank"> ¡Comparte tu experiencia con nosotros!</a>
+    </div>
+  </mat-toolbar>
+</footer>
