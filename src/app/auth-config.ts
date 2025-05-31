@@ -12,7 +12,7 @@ export const msalConfig: Configuration = {
     postLogoutRedirectUri: 'http://localhost:4200',
   },
   cache: {
-    cacheLocation: BrowserCacheLocation.LocalStorage, // Configures cache location. "sessionStorage" is more secure, but "localStorage" gives you SSO between tabs.
+    cacheLocation: BrowserCacheLocation.LocalStorage,
   },
   system: {
     loggerOptions: {
